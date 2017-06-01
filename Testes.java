@@ -9,5 +9,6 @@ public class Testes {
         System.out.println(chave);
         Conta conta = ServerDatabase.getConta(chave);
         System.out.println(conta);
+
     }
 }
