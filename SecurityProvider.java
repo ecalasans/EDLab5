@@ -37,5 +37,19 @@ public class SecurityProvider {
         return conta.getMd5();
     }
 
+    public static String[] md5ToClient(Conta conta){
+        String toCrypt = conta.getNomeCliente() + " " + conta.getSaldo();
+
+        int tamanho = toCrypt.length();
+
+        String[] tabelaMd5 = new String[tamanho];
+
+        for(int i = 0; i < tamanho; i++){
+            tabelaMd5[i] = md5(String.valueOf(toCrypt.charAt(i)));
+        }
+
+        return tabelaMd5;
+    }
+
 }
 
